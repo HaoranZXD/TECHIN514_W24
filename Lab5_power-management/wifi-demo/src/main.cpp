@@ -7,9 +7,9 @@
 #include "addons/RTDBHelper.h"
 
 const char* ssid = "UW MPSK";
-const char* password = "QKT%chTr73"; // Replace with your network password
-#define DATABASE_URL "https://esp32-firebase-demo-ba476-default-rtdb.firebaseio.com/" // Replace with your database URL
-#define API_KEY "AIzaSyBb-9yH-cSb3tR_SW2Eph2IO8MzBemrnmc" // Replace with your API key
+const char* password = "YourPasswordHere"; // Replace with your network password
+#define DATABASE_URL "https://xxxxx.firebaseio.com/" // Replace with your database URL
+#define API_KEY "YourAPIKeyHere" // Replace with your API key
 #define STAGE_INTERVAL 12000 // 12 seconds each stage
 #define MAX_WIFI_RETRIES 5 // Maximum number of WiFi connection retries
 
