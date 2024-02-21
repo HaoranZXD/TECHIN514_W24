@@ -45,9 +45,19 @@ Some useful external resources:
 
 Submit a single PDF of all screenshots as specified below.
 
-1. The link to your edited code with your power-saving strategy on GitHub. You can either create a new repo or push the updates to your existing repo for all labs (recommended).
-2. Screenshot of your firebase RTDB receiving the ultrasonic sensor readouts.
-3. Annotated screenshot of the plot on your power profiler app to show the power consumption in 5 different stages of ESP32S3's usage.
-4. Screenshots and calculations of each stage's power consumption and estimated battery-lasting time, respectively.
-5. Description of your own power-saving strategies/policies.
-6. Annotated screenshots of the power consumption plot of your power-saving strategy's use case.
+* Screenshot of your firebase RTDB receiving the ultrasonic sensor readouts.
+
+  * Some students might have difficulties in get the readings from the ultrasonic sensor correctly because of board/sensor issues. It is acceptable that the data showing up on Firebase are all 0s, since this is not the objective of this lab.
+* Annotated screenshot of the plot on your power profiler app to show the power consumption in 5 different stages of ESP32S3's usage.
+
+  * You need to have a **single screenshot showing all five stages altogether**, with each stages labeled/annotated. You do NOT need to take 5 screenshots for *each* stage separately.
+* Calculations of each stage's power consumption and estimated battery-lasting time, respectively.
+
+  * You should zoom in the window to make sure it shows the power consumption **within only ONE STAGE**, and then read the averaged current. Do NOT read the averaged current with the window showing up mixed stages' power consumption plot.
+* Demonstrate the power consumption (W) during the data transmitting stage with different data transmitting frequencies. Plot the figure demonstrating the correlation between data transmitting frequency (Hz) and power (W).
+
+  * Same as above, you do NOT need to take a screenshot for with data transmitting frequency, but you need to read the averaged current with the same frequency being used throughout the plot on your window.
+* Description of your own power-saving strategies/policies.
+* Annotated screenshots of the power consumption plot of your power-saving strategy's use case. The screenshot should at least include the deep-sleep stage and the working stage of your device.
+* Estimate your strategy's eletric consumption (mAh) in 24 hours under your simulated scenario. Prove that your strategy can make your device working for at least 24 hours with a 500mAh battery.
+* The link to your edited code with your power-saving strategy on GitHub. You can either create a new repo or push the updates to your existing repo for all labs (recommended).

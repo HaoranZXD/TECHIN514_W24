@@ -135,6 +135,8 @@ Annotate, like above, the key moments on the screenshot which depict the events 
 4. Ultrasonic + Wifi + Sending data to Firebase
 5. Deep Sleep mode
 
+Record the average current for each mode/stage above, and estimate how long would a 500mAh battery last if the device is kept being used under each mode.
+
 ## 7. Estimate the battery life for different use cases
 
 Using the window duration selector at the top of the Power Profiler App, change the time window to 3 or 10 seconds. For each of the five power-consumption use cases described above, wait until the window is filled with only the power consumption curve that is unique to each use case.
@@ -145,7 +147,7 @@ Take a screenshot of the power consumption curve and the average power consumpti
 
 A typical ‘[ADAFRUIT INDUSTRIES 1578 Lithium Ion Polymer Battery](https://www.adafruit.com/product/1578)’ has a capacity of 500mAh, which means that it can support a system running at 500 mA for 1 hour.
 
-Estimate how long the battery would support each of the five use cases before dying. For example, if the average current is 50mA, then the battery can last for 10 hours (500mAh / 50mA = 10 hours).
+Estimate how long the battery would support each of the five use cases before dying. For example, if the average current is 500mA, then the battery can last for 10 hours (500mAh / 50mA = 10 hours).
 
 Rewrite the Arduino code to transmit your ultrasonic sensor data to Firebase at the five following rates:
 
@@ -155,16 +157,14 @@ Rewrite the Arduino code to transmit your ultrasonic sensor data to Firebase at 
 4. Once every 3 seconds (0.333 Hz)
 5. Once every 4 seconds (0.25 Hz)
 
-Identify what the power consumption (i.e. average current) is for each of the five different data transmission rates. Plot a graph with Excel or Google Sheets to find the correlation between the data transmission rate and power consumption (i.e. average current).
+Identify what the power consumption (use averaged current multiply the power voltage, unit in Watt, W) is for each of the five different data transmission rates. Plot a graph with Excel or Google Sheets to find the correlation between the data transmission rate and power consumption.
 
-Take a screenshot of your plot.
-
-Estimate how long a 50mAh battery would support each of the five different data transmission rates.
+Zoom in the window to read the averaged current on your Power Profiler app, and estimate how long a 500mAh battery would support each of the five different data transmission rates.
 
 ## 8. Create your own power consumption guidelines for the ESP32 and ultrasonic sensor
 
-Given the insights that you have gained thus far, create your own power consumption guidelines for a battery-powered device. This ESP32-enabled device must use an ultrasonic sensor to measure distance and transmit that distance data to Firebase. The device must operate for **24 hours** on a single 50mAh battery.
+Given the insights that you have gained thus far, create your own power consumption guidelines for a battery-powered device. This ESP32-enabled device must use an ultrasonic sensor to measure distance and transmit that distance data to Firebase. The device must operate for **24 hours** on a single 500mAh battery.
 
 Assume that this device is designed to detect whether or not an object (or person) has moved in front of the ultrasonic sensor in a room. The results of that detection should be uploaded to the Firebase cloud database. Rewrite the Arduino code to develop new power consumption guidelines for this new device. There are several variables that you can change, including deep sleep duration and frequency, or the data transmission rate, among others. For example, you can develop a policy such as *“If the ultrasonic sensor’s readout is greater than 50cm for 30 seconds, turn the ESP32 to sleep mode for 30 seconds.”*
 
-Upload the code onto your ESP32, reconnect the Power Profiler Kit, and take a screenshot of a 1-minute window of the power consumption visualization. Include the average current in the screenshot. Annotate any notable changes in current on the visualization, and summarize the guidelines you’ve developed.
+Upload the code onto your ESP32, reconnect the Power Profiler Kit, and take a screenshot of a 1-minute window of the power consumption visualization. Make sure that your screenshot includes at least the deep-sleep mode and the working mode of your device. Include the average current in the screenshot. Finally, estimate your strategy's power consumption for 24 hours under your simulated scenario, and prove that it can be supported by a 500mAh battery without recharging. Annotate any notable changes in current on the visualization, and summarize the guidelines you’ve developed.
